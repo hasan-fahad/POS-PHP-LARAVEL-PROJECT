@@ -1,13 +1,14 @@
 <?php
 
-
 use App\Models\Admin;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 
 class AddAdmin extends Migration
 {
-    /**
+   /**
      * Run the migrations.
      *
      * @return void
@@ -15,8 +16,8 @@ class AddAdmin extends Migration
     public function up()
     {
         $admin = [
-            'name' => 'Jone Done',
-            'email' => 'jone@example.com',
+            'name' => 'Fahad',
+            'email' => 'fahad@example.com',
             'password' => Hash::make(12345678),
             'phone' => 23423459,
             'email_verified_at' => now()
@@ -33,4 +34,4 @@ class AddAdmin extends Migration
     {
         //
     }
-}
+};

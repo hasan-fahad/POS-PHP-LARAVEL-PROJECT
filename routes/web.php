@@ -1,8 +1,9 @@
 <?php
 
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\LoginController;
+
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersGroupController;
@@ -25,7 +26,6 @@ Route::get('login', [LoginController::class,'login'])->name('login');
 Route::post('login', [LoginController::class,'authenticate'])->name('login.confirm');
 
 
-Route::group(['middleware' => 'auth'], function() {
 	
 	Route::get('dashboard', function () {
 	    return view('welcome');
@@ -67,4 +67,3 @@ Route::resource('users',UsersController::class);
 
 Route::resource('categories', CategoriesController::class);
 Route::resource('products', ProductsController::class);
-});
